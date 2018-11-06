@@ -46,13 +46,12 @@ public class ListFragment extends android.support.v4.app.ListFragment {
         });
 
         getListView().setOnItemLongClickListener(new OnItemLongClickListener() {
-
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int
                     position, long id) {
                 String value = getListAdapter().getItem(position).toString();
                 ConfirmDeleteFragment.newInstance(value).show(getChildFragmentManager()
-                        , "DF");
+                        , ConfirmDeleteFragment.class.getName());
                 return true;
             }
         });
